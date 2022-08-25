@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerHand
   - TrashCan
+  - Junk
   layers:
   - Default
   - TransparentFX

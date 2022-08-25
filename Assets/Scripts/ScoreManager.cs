@@ -25,12 +25,14 @@ public class ScoreManager : MonoBehaviour
     }
     #endregion
 
-    public float scoreTime;
+    public int scoreTime = 500;
     public int scoreRecycle;
-    public float timerTime = 100f;
+    public int timerTime = 500;
     public TextMeshPro scoreTimeText;
     public TextMeshPro scoreRecycleText;
-
+    public TextMeshPro gameOverText;
+    public int numberOfJunks;
+    
     private void Start()
     {
         SetScoreTimeText();
@@ -38,9 +40,17 @@ public class ScoreManager : MonoBehaviour
     }
     void Update()
     {
-        scoreTime = timerTime - Time.time;
-        SetScoreTimeText();
-        SetScoreRecycleText();
+        numberOfJunks = (GameObject.FindGameObjectsWithTag("Junk")).Length;
+        if (scoreTime >= 0 && numberOfJunks > 0)
+        {
+            scoreTime = (int)(timerTime - Time.time);
+            SetScoreTimeText();
+            SetScoreRecycleText();
+        }
+        else
+        {
+            finishGame();
+        }
     }
 
     public void SetScoreTimeText()
@@ -56,5 +66,12 @@ public class ScoreManager : MonoBehaviour
     public void AddScoreRecycle(int score)
     {
         scoreRecycle += score;
+    }
+
+    public void finishGame()
+    {
+        Destroy(scoreRecycleText);
+        Destroy(scoreTimeText);
+        gameOverText.text = "Game Over! Your score is: " + scoreRecycle.ToString();
     }
 }

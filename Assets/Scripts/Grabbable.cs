@@ -13,6 +13,7 @@ public enum TrashType
 public class Grabbable : MonoBehaviour
 {
     public TrashType type;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals("TrashCan"))
@@ -28,7 +29,6 @@ public class Grabbable : MonoBehaviour
 
     private void PutInTrashCan(GameObject can)
     {
-
         Destroy(can);
     }
 }
