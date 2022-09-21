@@ -17,10 +17,11 @@ public class TrashCan : MonoBehaviour
 
     public void TrashEntered(Grabbable trash)
     {
+        ScoreManager.Instance.TrashEnteredToBin();
         if (type.ToString().Equals(trash.type.ToString()))
         {
             ScoreManager.Instance.AddScoreRecycle(1);
-            ScoreManager.Instance.SetScoreRecycleText();
+            ScoreManager.Instance.SetScoreRecycle();
         }
     }
 }
