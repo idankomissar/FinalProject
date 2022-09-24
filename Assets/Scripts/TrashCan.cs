@@ -23,5 +23,8 @@ public class TrashCan : MonoBehaviour
             ScoreManager.Instance.AddScoreRecycle(1);
             ScoreManager.Instance.SetScoreRecycle();
         }
+        var pos = trash.transform.position;
+        DataManager.Instance.WriteTrashEnteredEvent(ScoreManager.Instance.scoreRecycle, new Vector3(pos.x, pos.y, pos.z));
+
     }
 }

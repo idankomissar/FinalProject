@@ -47,8 +47,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         numberOfJunks = (GameObject.FindGameObjectsWithTag("Junk")).Length;
-        Debug.Log("number of junks is " + numberOfJunks);
-        if (scoreTime >= 0 && totalObjects- scoreRecycle > 0)
+        if (scoreTime >= 0 && numberOfJunks > 0)
         {
             scoreTime = (int)(timerTime - Time.time);
             SetTime();
@@ -72,7 +71,6 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreBar!= null)
         {
-            Debug.Log("set score recycle");
             scoreBar.transform.localScale = new Vector3(((float)scoreRecycle / (float)totalObjects), 0.1F, 0);
         }
         
