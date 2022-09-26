@@ -18,6 +18,7 @@ public class TrashCan : MonoBehaviour
     public void TrashEntered(Grabbable trash)
     {
         ScoreManager.Instance.TrashEnteredToBin();
+        AudioManager.Instance.Play("TrashDrop");
         if (type.ToString().Equals(trash.type.ToString()))
         {
             ScoreManager.Instance.AddScoreRecycle(1);
