@@ -9,6 +9,8 @@ TagManager:
   - Junk
   - Time
   - Score
+  - iceberg
+  - TrashCanIce
   layers:
   - Default
   - TransparentFX

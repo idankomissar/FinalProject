@@ -21,7 +21,12 @@ public class Grabbable : MonoBehaviour
             other.GetComponent<TrashCan>().TrashEntered(this);
             PutInTrashCan(gameObject);
         }
-        if (other.tag.Equals("PlayerHand"))
+        else if (other.tag.Equals("TrashCanIce"))
+        {
+            other.GetComponent<TrashCanIce>().TrashEntered(this);
+            PutInTrashCan(gameObject);
+        }
+        else if (other.tag.Equals("PlayerHand"))
         {
             transform.SetParent(other.transform);
         }
