@@ -52,10 +52,11 @@ public class DataManager : MonoBehaviour
                                    "Head_Position_X,Head_Position_Y,Head_Position_Z");
 
         writerDiscrete.WriteLine("Time," +
+                                 "IsCompatible," +
                                  "Score," +
-                                  "Pickup_Position_X," +
-                                  "Pickup_Position_Y," +
-                                  "Pickup_Position_Z");
+                                  "Drop_Position_X," +
+                                  "Drop_Position_Y," +
+                                  "Drop_Position_Z");
     }
 
     void FixedUpdate()
@@ -68,11 +69,12 @@ public class DataManager : MonoBehaviour
     }
 
     // write discrete data
-    public void WriteTrashEnteredEvent(int score, Vector3 pickupPosition)
+    public void WriteTrashEnteredEvent(int score, bool isCompatible, Vector3 dropPosition)
     {
         writerDiscrete.Write($"{Time.time},");
+        writerDiscrete.Write($"{isCompatible},");
         writerDiscrete.Write($"{score},");
-        writerDiscrete.WriteLine($"{pickupPosition.x},{pickupPosition.y},{pickupPosition.z}");
+        writerDiscrete.WriteLine($"{dropPosition.x},{dropPosition.y},{dropPosition.z}");
     }
 
 
