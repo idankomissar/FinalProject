@@ -11,6 +11,7 @@ TagManager:
   - Score
   - iceberg
   - TrashCanIce
+  - olaf
   layers:
   - Default
   - TransparentFX

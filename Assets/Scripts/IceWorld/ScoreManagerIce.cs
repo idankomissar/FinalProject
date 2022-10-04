@@ -31,8 +31,9 @@ public class ScoreManagerIce : MonoBehaviour
     public int numberOfJunks;
     private Vector3 a = new Vector3(0, 0.1F, 0);
     private Vector3 b = new Vector3(1, 0.1F, 0);
-    private int totalObjects = 5;
+    //private int totalObjects = 5;??
     public Glacier[] icebergs;
+    //public GameObject olaf;
    
 
     private void Start()
@@ -44,6 +45,8 @@ public class ScoreManagerIce : MonoBehaviour
         {
             icebergs[i] = new Glacier(objects[i],i);
         }
+        //olaf = GameObject.FindWithTag("olaf");
+        ////olaf.SetActive(false);
     }
 
     void Update()
@@ -80,36 +83,24 @@ public class ScoreManagerIce : MonoBehaviour
 
     public void Enlarge(Glacier obj)
     {
-        Debug.Log("entered enlarge");
-
         if (obj.glacier.activeSelf)
         {
-            Debug.Log("entered if");
-
-            obj.glacier.transform.localScale += new Vector3(0.5f, 0.5f, 0.5f);
+            obj.glacier.transform.localScale += new Vector3(1.5f, 1.5f, 1.5f);
         }
         else
         {
-            Debug.Log("entered else");
-
             obj.glacier.SetActive(true);
         }
     }
 
     public void Shrink(Glacier obj)
     {
-        Debug.Log("entered shrinks");
-
-        if ((obj.glacier.transform.localScale.x -0.5f) >= obj.initialScale.x)
+        if ((obj.glacier.transform.localScale.x -1.5f) >= obj.initialScale.x)
         {
-            Debug.Log("entered if");
-
-            obj.glacier.transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
+            obj.glacier.transform.localScale -= new Vector3(1.5f, 1.5f, 1.5f);
         }
         else
         {
-            Debug.Log("entered else");
-
             obj.glacier.SetActive(false);
         }
     }
@@ -117,6 +108,7 @@ public class ScoreManagerIce : MonoBehaviour
     public void finishGame()
     {
         Destroy(scoreTimeText);
-        gameOverText.text = "Game Over! Your score is: " + scoreRecycle.ToString();
+        gameOverText.text = "Game Over!";
+        //olaf.SetActive(true);
     }
 }
