@@ -32,8 +32,8 @@ public class Grabbable : MonoBehaviour
         }
     }
 
-    private void PutInTrashCan(GameObject can)
+    private void PutInTrashCan(GameObject junk)
     {
-        Destroy(can);
+        Destroy(junk);
     }
 }

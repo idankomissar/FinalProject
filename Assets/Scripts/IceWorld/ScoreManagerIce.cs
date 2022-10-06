@@ -43,7 +43,8 @@ public class ScoreManagerIce : MonoBehaviour
         icebergs = new Glacier[objects.Length];
         for (int i=0; i<objects.Length; i++)
         {
-            icebergs[i] = new Glacier(objects[i],i);
+            icebergs[i] = objects[i].GetComponent<Glacier>();
+            icebergs[i].Set(objects[i], i);
         }
         //olaf = GameObject.FindWithTag("olaf");
         ////olaf.SetActive(false);
@@ -85,7 +86,7 @@ public class ScoreManagerIce : MonoBehaviour
     {
         if (obj.glacier.activeSelf)
         {
-            obj.glacier.transform.localScale += new Vector3(1.5f, 1.5f, 1.5f);
+            obj.glacier.transform.localScale += new Vector3(5f, 5f, 5f);
         }
         else
         {
@@ -95,9 +96,9 @@ public class ScoreManagerIce : MonoBehaviour
 
     public void Shrink(Glacier obj)
     {
-        if ((obj.glacier.transform.localScale.x -1.5f) >= obj.initialScale.x)
+        if ((obj.glacier.transform.localScale.x -5f) >= obj.initialScale.x)
         {
-            obj.glacier.transform.localScale -= new Vector3(1.5f, 1.5f, 1.5f);
+            obj.glacier.transform.localScale -= new Vector3(5f, 5f, 5f);
         }
         else
         {
