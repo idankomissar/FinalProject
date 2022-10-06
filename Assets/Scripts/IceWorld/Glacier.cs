@@ -9,7 +9,7 @@ public class Glacier : MonoBehaviour
     public GameObject glacier;
     public Vector3 initialScale;
     public int index;
-    public Glacier()
+    public void Awake()
     {
         initialScale = new Vector3(this.transform.localScale.x, this.transform.localScale.y, this.transform.localScale.z);
     }

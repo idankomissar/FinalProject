@@ -31,7 +31,6 @@ public class ScoreManagerIce : MonoBehaviour
     public int numberOfJunks;
     private Vector3 a = new Vector3(0, 0.1F, 0);
     private Vector3 b = new Vector3(1, 0.1F, 0);
-    //private int totalObjects = 5;??
     public Glacier[] icebergs;
     //public GameObject olaf;
    
