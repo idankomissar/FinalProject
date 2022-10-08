@@ -57,7 +57,10 @@ sysinfo.txt
 *.aab
 *.unitypackage
 *.app
-
+.DS_Store
+Assets/.DS_Store
+Assets\\Data\\DiscreteTest_Liron.txt
+Assets\\Data\\ContinuousTest_Liron.txt
 # Crashlytics generated file
 crashlytics-build.properties
 UpgradeLog.htm

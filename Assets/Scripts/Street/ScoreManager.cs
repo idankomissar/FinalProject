@@ -45,7 +45,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     void Update()
-    {
+    { 
         numberOfJunks = (GameObject.FindGameObjectsWithTag("Junk")).Length;
         if (scoreTime >= 0 && numberOfJunks > 0)
         {
