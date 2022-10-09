@@ -3287,7 +3287,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 68551259dd3554d8c92cd6fb801f15b9, type: 2}
     - target: {fileID: 919132149155446097, guid: 5a830150860ce4be5a358f4a444379d5, type: 3}
       propertyPath: m_Name
-      value: uploads_files_2243286_Trashbin
+      value: TrashCan
       objectReference: {fileID: 0}
     - target: {fileID: 5509048916075752202, guid: 5a830150860ce4be5a358f4a444379d5, type: 3}
       propertyPath: m_Materials.Array.data[0]
