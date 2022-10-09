@@ -1,4 +1,0 @@
-Time,IsCompatible,Score,Drop_Position_X,Drop_Position_Y,Drop_Position_Z
-23.66,True,1,-0.933,0.18,-1.62
-52.66,False,1,-0.954203,0.086,-1.731
-66.78,True,2,-0.497,0.056,-1.632
