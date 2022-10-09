@@ -4,6 +4,7 @@ public class TrashCanIce : MonoBehaviour
 {
     public TrashCanType type;
 
+
     public void TrashEntered(Grabbable trash)
     {
         var isCompatible = false;

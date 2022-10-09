@@ -33,13 +33,11 @@ public class ScoreManagerIce : MonoBehaviour
     private Vector3 b = new Vector3(1, 0.1F, 0);
     public Glacier[] icebergs;
     public GameObject secondgroup;
+    public GameObject thirdgroup;
     //public GameObject olaf;
 
-    public bool first = false;
     public bool second = false;
     public bool third = false;
-    public bool fourth = false;
-    public bool fifth = false;
 
 
     private void Start()
@@ -58,13 +56,17 @@ public class ScoreManagerIce : MonoBehaviour
 
     void Update()
     {
-        if (fifth)
+        if (third)
         {
             numberOfJunks = (GameObject.FindGameObjectsWithTag("Junk")).Length;
         }
+        else if (second)
+        {
+            numberOfJunks = (GameObject.FindGameObjectsWithTag("Junk")).Length + 7;
+        }
         else
         {
-            numberOfJunks = (GameObject.FindGameObjectsWithTag("Junk")).Length + 5;
+            numberOfJunks = (GameObject.FindGameObjectsWithTag("Junk")).Length + 14;
         }
         if (scoreTime >= 0 && numberOfJunks > 0)
         {
@@ -73,8 +75,14 @@ public class ScoreManagerIce : MonoBehaviour
         }
         if (numberOfJunks <= 14 && !second)
         {
-            second = true;
             secondgroup.SetActive(true);
+            second = true;
+        }
+
+        if (numberOfJunks <= 7 && !third)
+        {
+            thirdgroup.SetActive(true);
+            third = true;
         }
 
         if (scoreTime == 0 || numberOfJunks == 0)

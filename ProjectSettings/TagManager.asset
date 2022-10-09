@@ -12,6 +12,8 @@ TagManager:
   - iceberg
   - TrashCanIce
   - olaf
+  - iceFieldRight
+  - IceFieldLeft
   layers:
   - Default
   - TransparentFX
