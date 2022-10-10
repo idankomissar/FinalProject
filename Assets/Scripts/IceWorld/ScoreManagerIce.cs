@@ -37,6 +37,10 @@ public class ScoreManagerIce : MonoBehaviour
     //public GameObject olaf;
     public bool second = false;
     public bool third = false;
+    public GameObject LeftIceField;
+    public GameObject RightIceField;
+    public bool LeftIceFieldAppear = false;
+    public bool RightIceFieldAppear = false;
 
 
     private void Start()
@@ -77,6 +81,7 @@ public class ScoreManagerIce : MonoBehaviour
             thirdgroup.SetActive(true);
             third = true;
         }
+
     }
 
     public void SetTime()
@@ -90,6 +95,16 @@ public class ScoreManagerIce : MonoBehaviour
     public void AddScoreRecycle(int score)
     {
         scoreRecycle += score;
+        if (scoreRecycle >= 1 && !LeftIceFieldAppear)
+        {
+            LeftIceField.SetActive(true);
+            LeftIceFieldAppear = true;
+        }
+        else if (scoreRecycle >= 2 && !RightIceFieldAppear)
+        {
+            RightIceField.SetActive(true);
+            RightIceFieldAppear = true;
+        }
     }
 
     public void TrashEnteredToBin()

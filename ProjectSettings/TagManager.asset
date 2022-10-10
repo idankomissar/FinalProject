@@ -14,6 +14,7 @@ TagManager:
   - olaf
   - iceFieldRight
   - IceFieldLeft
+  - IceField
   layers:
   - Default
   - TransparentFX
