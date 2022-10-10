@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2456076, g: 0.34669805, b: 0.47030747, a: 1}
+  m_IndirectSpecularColor: {r: 0.245478, g: 0.34648576, b: 0.4699278, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -270,8 +270,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.16909961, y: 0.11055148, z: 0.1365731}
+  m_Center: {x: -0.0008131465, y: 0.027647814, z: 0.00081314147}
 --- !u!54 &136032599
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -877,8 +877,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fec417709b8464f809751c03496e9d63, type: 3}
   m_PrefabInstance: {fileID: 260048626}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &260048628
-SphereCollider:
+--- !u!65 &260048628
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -888,8 +888,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7
-  m_Center: {x: 0, y: 0.3, z: 0.7}
+  m_Size: {x: 1.0356474, y: 0.34497726, z: 1.0356474}
+  m_Center: {x: 0.13367811, y: 0.21611297, z: 0.74414015}
 --- !u!54 &260048629
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1108,8 +1108,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4303136, y: 0.42631596, z: 0.35900086}
-  m_Center: {x: 0, y: 0.20425102, z: 0.000000022351742}
+  m_Size: {x: 0.38566038, y: 0.33162963, z: 0.35900095}
+  m_Center: {x: -0.0077584223, y: 0.1569078, z: 0.000000016556847}
 --- !u!54 &309302944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1965,8 +1965,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19666862, y: 0.27720177, z: 0.12585807}
-  m_Center: {x: -0.004715085, y: 0.12950379, z: 0.0014899969}
+  m_Size: {x: 0.1651895, y: 0.26273835, z: 0.08672178}
+  m_Center: {x: -0.000035762787, y: 0.12992918, z: -0.0002116561}
 --- !u!4 &508217695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41ebe5a684aea4006b1253089623cf35, type: 3}
@@ -2542,8 +2542,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.46902576, y: 1.1234931, z: 0.2968804}
-  m_Center: {x: -0.009369055, y: 0.5368334, z: -0.016724268}
+  m_Size: {x: 0.4160762, y: 1.0852517, z: 0.2674643}
+  m_Center: {x: -0.0005443642, y: 0.5412458, z: -0.0020162263}
 --- !u!54 &696800773
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3848,8 +3848,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1572038055
-BoxCollider:
+--- !u!135 &1572038055
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3859,8 +3859,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.07248525, y: 0.07361772, z: 0.07795628}
-  m_Center: {x: 0.0012510605, y: 0.0030497946, z: -0.00049925596}
+  m_Radius: 0.037804823
+  m_Center: {x: 0.002759587, y: 0.0023793317, z: -0.00049925596}
 --- !u!114 &1572038056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4340,8 +4340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
---- !u!65 &1736662322
-BoxCollider:
+--- !u!136 &1736662322
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4350,9 +4350,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.147761
+  m_Height: 4.7221923
+  m_Direction: 1
+  m_Center: {x: -0.002038479, y: 0.7641691, z: 0.004611413}
 --- !u!54 &1736662323
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4397,8 +4398,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
---- !u!65 &1754990203
-BoxCollider:
+--- !u!135 &1754990203
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4408,8 +4409,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.07248525, y: 0.07361772, z: 0.07795628}
-  m_Center: {x: 0.0012510605, y: 0.0030497946, z: -0.00049925596}
+  m_Radius: 0.04073596
+  m_Center: {x: 0.00012407452, y: 0.0016617998, z: -0.00072455406}
 --- !u!54 &1754990204
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4518,8 +4519,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.7929075, y: 1.6505355, z: 0.78449965}
+  m_Center: {x: 0.012268424, y: -0.016263276, z: -0.00680089}
 --- !u!4 &1949002929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4cb3a6aadc1cc42379e0786c6135a228, type: 3}
