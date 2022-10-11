@@ -28,24 +28,42 @@ public class ScoreManagerIce : MonoBehaviour
     public int timerTime = 480;
     public TextMeshPro scoreTimeText;
     public TextMeshPro gameOverText;
-    public int numberOfJunks;
     private Vector3 a = new Vector3(0, 0.1F, 0);
     private Vector3 b = new Vector3(1, 0.1F, 0);
     public Glacier[] icebergs;
-    public GameObject secondgroup;
-    public GameObject thirdgroup;
-    //public GameObject olaf;
+    public GameObject firstGroup;
+    public GameObject secondGroup;
+    public GameObject thirdGroup;
+    public GameObject olaf;
     public bool second = false;
     public bool third = false;
     public GameObject LeftIceField;
     public GameObject RightIceField;
     public bool LeftIceFieldAppear = false;
     public bool RightIceFieldAppear = false;
+    public int totalNumOfJunk;
+    public int CurrNumOfJunks;
+    public int NumOfJunksInFirstGroup;
+    public int NumOfJunksInSecondGroup;
+    public int NumOfJunksInThirdGroup;
+    public GameObject[] animals;
+    public int chosenAnimalIndex = 0;
 
 
     private void Start()
-    {
-        numberOfJunks = 22;
+    {   
+        totalNumOfJunk = GameObject.FindGameObjectsWithTag("Junk").Length;
+        CurrNumOfJunks = totalNumOfJunk;
+        NumOfJunksInFirstGroup = firstGroup.transform.childCount;
+        NumOfJunksInSecondGroup = secondGroup.transform.childCount;
+        NumOfJunksInThirdGroup = thirdGroup.transform.childCount;
+        NumOfJunksInThirdGroup = thirdGroup.transform.childCount;
+        animals = GameObject.FindGameObjectsWithTag("Animal");
+        for (int i=0; i<animals.Length; i++)
+        {
+            animals[i].SetActive(false);
+        }
+
         SetTime();
         var objects = GameObject.FindGameObjectsWithTag("iceberg");
         icebergs = new Glacier[objects.Length];
@@ -54,13 +72,14 @@ public class ScoreManagerIce : MonoBehaviour
             icebergs[i] = objects[i].GetComponent<Glacier>();
             icebergs[i].Set(objects[i], i);
         }
-        //olaf = GameObject.FindWithTag("olaf");
-        ////olaf.SetActive(false);
+        secondGroup.SetActive(false);
+        thirdGroup.SetActive(false);
+        olaf.SetActive(false);
     }
 
     void Update()
     {
-        if (scoreTime >= 0 && numberOfJunks > 0)
+        if (scoreTime >= 0 && CurrNumOfJunks > 0)
         {
             scoreTime = (int)(timerTime - Time.time);
             SetTime();
@@ -70,15 +89,15 @@ public class ScoreManagerIce : MonoBehaviour
             finishGame();
         }
 
-        if (numberOfJunks <= 14 && !second)
+        if ((totalNumOfJunk - NumOfJunksInFirstGroup) >= CurrNumOfJunks && !second)
         {
-            secondgroup.SetActive(true);
+            secondGroup.SetActive(true);
             second = true;
         }
 
-        else if (numberOfJunks <= 7 && !third)
+        else if ((totalNumOfJunk - (NumOfJunksInFirstGroup + NumOfJunksInSecondGroup)) >= CurrNumOfJunks && !third)
         {
-            thirdgroup.SetActive(true);
+            thirdGroup.SetActive(true);
             third = true;
         }
 
@@ -105,11 +124,17 @@ public class ScoreManagerIce : MonoBehaviour
             RightIceField.SetActive(true);
             RightIceFieldAppear = true;
         }
+        else if (CurrNumOfJunks < totalNumOfJunk)
+        {
+            animals[chosenAnimalIndex].SetActive(true);
+            chosenAnimalIndex++;
+        }
+
     }
 
     public void TrashEnteredToBin()
     {
-        numberOfJunks--;
+        CurrNumOfJunks--;
     }
 
     public void Enlarge(Glacier obj)
@@ -140,6 +165,6 @@ public class ScoreManagerIce : MonoBehaviour
     {
         Destroy(scoreTimeText);
         gameOverText.text = "Game Over!";
-        //olaf.SetActive(true);
+        olaf.SetActive(true);
     }
 }

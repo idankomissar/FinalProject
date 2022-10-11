@@ -36,27 +36,55 @@ public class ScoreManager : MonoBehaviour
     public int numberOfJunks;
     private Vector3 a = new Vector3(0, 0.1F, 0);
     private Vector3 b = new Vector3(1, 0.1F, 0);
-    private int totalObjects = 5;
+    public GameObject firstGroup;
+    public GameObject secondGroup;
+    public GameObject thirdGroup;
+    public bool second = false;
+    public bool third = false;
+    public int totalNumOfJunk;
+    public int CurrNumOfJunks;
+    public int NumOfJunksInFirstGroup;
+    public int NumOfJunksInSecondGroup;
+    public int NumOfJunksInThirdGroup;
 
     private void Start()
     {
+        totalNumOfJunk = GameObject.FindGameObjectsWithTag("Junk").Length;
+        CurrNumOfJunks = totalNumOfJunk;
+        NumOfJunksInFirstGroup = firstGroup.transform.childCount;
+        NumOfJunksInSecondGroup = secondGroup.transform.childCount;
+        NumOfJunksInThirdGroup = thirdGroup.transform.childCount;
+        NumOfJunksInThirdGroup = thirdGroup.transform.childCount;
         SetTime();
-        SetScoreRecycle();  
+        SetScoreRecycle();
+        secondGroup.SetActive(false);
+        thirdGroup.SetActive(false);
     }
 
     void Update()
-    { 
-        numberOfJunks = (GameObject.FindGameObjectsWithTag("Junk")).Length;
-        if (scoreTime >= 0 && numberOfJunks > 0)
+    {
+        if (scoreTime >= 0 && CurrNumOfJunks > 0)
         {
             scoreTime = (int)(timerTime - Time.time);
             SetTime();
-            SetScoreRecycle();
         }
         else
         {
             finishGame();
         }
+
+        if ((totalNumOfJunk - NumOfJunksInFirstGroup) >= CurrNumOfJunks && !second)
+        {
+            secondGroup.SetActive(true);
+            second = true;
+        }
+
+        else if ((totalNumOfJunk - (NumOfJunksInFirstGroup + NumOfJunksInSecondGroup)) >= CurrNumOfJunks && !third)
+        {
+            thirdGroup.SetActive(true);
+            third = true;
+        }
+
     }
 
     public void SetTime()
@@ -71,7 +99,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreBar!= null)
         {
-            scoreBar.transform.localScale = new Vector3(((float)scoreRecycle / (float)totalObjects), 0.1F, 0);
+            scoreBar.transform.localScale = new Vector3(((float)scoreRecycle / (float)totalNumOfJunk), 0.1F, 0);
         }
         
     }

@@ -15,6 +15,7 @@ TagManager:
   - iceFieldRight
   - IceFieldLeft
   - IceField
+  - Animal
   layers:
   - Default
   - TransparentFX
