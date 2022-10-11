@@ -31,10 +31,13 @@ public class TrashCanIce : MonoBehaviour
             ScoreManagerIce.Instance.AddScoreRecycle(1);
             ScoreManagerIce.Instance.Enlarge(ScoreManagerIce.Instance.icebergs[0]);
             isCompatible = true;
+            ScoreManagerIce.Instance.AddToEnvironment();
         }
         else
         {
+
             ScoreManagerIce.Instance.Shrink(ScoreManagerIce.Instance.icebergs[0]);
+            ScoreManagerIce.Instance.DiscardFromEnvironment();
         }
         var pos = trash.transform.position;
         DataManager.Instance.WriteTrashEnteredEvent(ScoreManagerIce.Instance.scoreRecycle, isCompatible, new Vector3(pos.x, pos.y, pos.z));

@@ -114,21 +114,6 @@ public class ScoreManagerIce : MonoBehaviour
     public void AddScoreRecycle(int score)
     {
         scoreRecycle += score;
-        if (scoreRecycle >= 1 && !LeftIceFieldAppear)
-        {
-            LeftIceField.SetActive(true);
-            LeftIceFieldAppear = true;
-        }
-        else if (scoreRecycle >= 2 && !RightIceFieldAppear)
-        {
-            RightIceField.SetActive(true);
-            RightIceFieldAppear = true;
-        }
-        else if (CurrNumOfJunks < totalNumOfJunk)
-        {
-            animals[chosenAnimalIndex].SetActive(true);
-            chosenAnimalIndex++;
-        }
 
     }
 
@@ -146,6 +131,35 @@ public class ScoreManagerIce : MonoBehaviour
         else
         {
             obj.glacier.SetActive(true);
+        }
+    }
+
+    public void AddToEnvironment()
+    {
+        if (scoreRecycle >= 1 && !LeftIceFieldAppear)
+        {
+            LeftIceField.SetActive(true);
+            LeftIceFieldAppear = true;
+        }
+        else if (scoreRecycle >= 2 && !RightIceFieldAppear)
+        {
+            RightIceField.SetActive(true);
+            RightIceFieldAppear = true;
+        }
+        else if (CurrNumOfJunks > 0)
+        {
+            animals[chosenAnimalIndex].SetActive(true);
+            chosenAnimalIndex++;
+        }
+
+    }
+
+    public void DiscardFromEnvironment()
+    {
+        if (scoreRecycle > 2 && CurrNumOfJunks > 0 && chosenAnimalIndex > 0)
+        {
+            chosenAnimalIndex--;
+            animals[chosenAnimalIndex].SetActive(false);
         }
     }
 
