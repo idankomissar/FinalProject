@@ -1,5 +1,8 @@
 using UnityEngine;
 using TMPro;
+using System.Linq;
+using System;
+using System.Collections.Generic;
 
 public class ScoreManagerIce : MonoBehaviour
 {
@@ -47,7 +50,11 @@ public class ScoreManagerIce : MonoBehaviour
     public int NumOfJunksInSecondGroup;
     public int NumOfJunksInThirdGroup;
     public GameObject[] animals;
+    public List<GameObject> animalsList;
     public int chosenAnimalIndex = 0;
+    public int numOfIceBergs;
+    public int numOfAnimals;
+
 
 
     private void Start()
@@ -58,23 +65,29 @@ public class ScoreManagerIce : MonoBehaviour
         NumOfJunksInSecondGroup = secondGroup.transform.childCount;
         NumOfJunksInThirdGroup = thirdGroup.transform.childCount;
         NumOfJunksInThirdGroup = thirdGroup.transform.childCount;
+        secondGroup.SetActive(false);
+        thirdGroup.SetActive(false);
+
         animals = GameObject.FindGameObjectsWithTag("Animal");
-        for (int i=0; i<animals.Length; i++)
+        animalsList = animals.OrderBy(x => UnityEngine.Random.value).ToList();
+        numOfAnimals = animals.Length;
+        for (int i=0; i< numOfAnimals; i++)
         {
             animals[i].SetActive(false);
         }
-
-        SetTime();
+        
+        numOfIceBergs = GameObject.FindGameObjectsWithTag("iceberg").Length;
         var objects = GameObject.FindGameObjectsWithTag("iceberg");
-        icebergs = new Glacier[objects.Length];
-        for (int i=0; i<objects.Length; i++)
+        icebergs = new Glacier[numOfIceBergs];
+        for (int i=0; i < numOfIceBergs; i++)
         {
             icebergs[i] = objects[i].GetComponent<Glacier>();
             icebergs[i].Set(objects[i], i);
         }
-        secondGroup.SetActive(false);
-        thirdGroup.SetActive(false);
+
         olaf.SetActive(false);
+        
+        SetTime();
     }
 
     void Update()
@@ -115,7 +128,7 @@ public class ScoreManagerIce : MonoBehaviour
     {
         scoreRecycle += score;
 
-    }
+    }  
 
     public void TrashEnteredToBin()
     {
@@ -146,9 +159,10 @@ public class ScoreManagerIce : MonoBehaviour
             RightIceField.SetActive(true);
             RightIceFieldAppear = true;
         }
-        else if (CurrNumOfJunks > 0)
+
+        else if (CurrNumOfJunks > 0 && CurrNumOfJunks%2 ==0 && chosenAnimalIndex < numOfAnimals)
         {
-            animals[chosenAnimalIndex].SetActive(true);
+            animalsList[chosenAnimalIndex].SetActive(true);
             chosenAnimalIndex++;
         }
 
@@ -159,7 +173,7 @@ public class ScoreManagerIce : MonoBehaviour
         if (scoreRecycle > 2 && CurrNumOfJunks > 0 && chosenAnimalIndex > 0)
         {
             chosenAnimalIndex--;
-            animals[chosenAnimalIndex].SetActive(false);
+            animalsList[chosenAnimalIndex].SetActive(false);
         }
     }
 

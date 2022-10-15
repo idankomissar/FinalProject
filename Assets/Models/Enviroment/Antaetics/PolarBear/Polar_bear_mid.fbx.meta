@@ -78,7 +78,12 @@ ModelImporter:
   - first:
       74: -6897284629629933825
     second: Arm_bear|walk_search
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: P_Bear_color
+    second: {fileID: 2100000, guid: a27d2a758644d364096489b960290ffe, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -96,16 +101,741 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
+    importAnimatedCustomProperties: 1
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Arm_bear|attack_1
+      takeName: Arm_bear|attack_1
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|attack_2
+      takeName: Arm_bear|attack_2
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|dead_1
+      takeName: Arm_bear|dead_1
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|dead_2
+      takeName: Arm_bear|dead_2
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|down
+      takeName: Arm_bear|down
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|eat
+      takeName: Arm_bear|eat
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|hate_1
+      takeName: Arm_bear|hate_1
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|hit_1
+      takeName: Arm_bear|hit_1
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|idle_1
+      takeName: Arm_bear|idle_1
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|idle_2
+      takeName: Arm_bear|idle_2
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|idle_search
+      takeName: Arm_bear|idle_search
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|run
+      takeName: Arm_bear|run
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|sleep_end
+      takeName: Arm_bear|sleep_end
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 47
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|sleep_idle
+      takeName: Arm_bear|sleep_idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|sleep_start
+      takeName: Arm_bear|sleep_start
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|up
+      takeName: Arm_bear|up
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|up.001
+      takeName: Arm_bear|up.001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|up.002
+      takeName: Arm_bear|up.002
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|up_attack
+      takeName: Arm_bear|up_attack
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|up_hate
+      takeName: Arm_bear|up_hate
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|up_hit
+      takeName: Arm_bear|up_hit
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|up_idle
+      takeName: Arm_bear|up_idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|walk_1
+      takeName: Arm_bear|walk_1
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|walk_back
+      takeName: Arm_bear|walk_back
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm_bear|walk_search
+      takeName: Arm_bear|walk_search
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -152,7 +882,177 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Polar_bear_mid(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Arm_bear
+      parentName: Polar_bear_mid(Clone)
+      position: {x: -1.261697e-25, y: -1.7763568e-15, z: 0}
+      rotation: {x: 1, y: -1.1102228e-16, z: 1.11022296e-16, w: -0.00000013315805}
+      scale: {x: 102.09628, y: 102.09628, z: 102.09628}
+    - name: Base
+      parentName: Arm_bear
+      position: {x: -3.1656781e-18, y: -0.00008529661, z: -0.001520813}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: foot_1_1.L
+      parentName: Base
+      position: {x: -0.0016112006, y: -0.0028844331, z: 0.000722755}
+      rotation: {x: 0.9846265, y: 0.000000005205691, z: -0.000000029344159, w: -0.17467344}
+      scale: {x: 1, y: 1, z: 1.0000006}
+    - name: foot_1_2.L
+      parentName: foot_1_1.L
+      position: {x: 1.6247956e-10, y: 0.0010229383, z: -1.5723742e-11}
+      rotation: {x: -0.04744322, y: -0.0045352783, z: 0.0010449722, w: 0.9988631}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: foot_2_1.L
+      parentName: Base
+      position: {x: -0.001792937, y: 0.00587581, z: 0.00066824444}
+      rotation: {x: 0.9902038, y: 0.000000011204615, z: -0.00000007945911, w: -0.13962959}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: foot_2_2.L
+      parentName: foot_2_1.L
+      position: {x: -7.195979e-11, y: 0.0014251864, z: 1.0148458e-10}
+      rotation: {x: -0.11275984, y: 0.000000016807359, z: 0.000000016189517, w: 0.9936223}
+      scale: {x: 1, y: 1, z: 1}
+    - name: spine
+      parentName: Base
+      position: {x: 4.4486605e-11, y: 0.0024220329, z: 0.010980112}
+      rotation: {x: 0.00000009415697, y: 0.7071068, z: 0.7071067, w: 0.00000009415696}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: spine_04
+      parentName: spine
+      position: {x: 9.942743e-18, y: 5.607834e-11, z: -1.0975213e-10}
+      rotation: {x: -0.02786788, y: 0.08754135, z: 0.99550366, w: 0.023075415}
+      scale: {x: 1, y: 1.0000002, z: 1}
+    - name: spine_05
+      parentName: spine_04
+      position: {x: 4.440892e-18, y: 0.0026046592, z: -7.45058e-10}
+      rotation: {x: -0.17345612, y: 0.0000064196065, z: 0.000023169676, w: 0.9848416}
+      scale: {x: 1, y: 1, z: 1}
+    - name: spine_06
+      parentName: spine_05
+      position: {x: 2.4424906e-17, y: 0.0023952436, z: 7.45058e-10}
+      rotation: {x: 0.06790005, y: 0.9029642, z: -0.4016437, w: 0.13684891}
+      scale: {x: 1, y: 1, z: 1}
+    - name: tail_01
+      parentName: spine_06
+      position: {x: -1.3544721e-16, y: 0.0022429726, z: -0.000000001490116}
+      rotation: {x: -0.367557, y: -0.000000041992106, z: -0.000000050326474, w: 0.930001}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: tail_02
+      parentName: tail_01
+      position: {x: 2.9876493e-17, y: 0.0007672439, z: 5.9604643e-10}
+      rotation: {x: -0.10678445, y: -0.00000004931385, z: -0.0000000037050327, w: 0.9942822}
+      scale: {x: 1, y: 0.9999998, z: 0.99999994}
+    - name: leg_2_1.L
+      parentName: spine_05
+      position: {x: -0.0010848208, y: 0.0020748517, z: -0.0005685388}
+      rotation: {x: -0.7234943, y: 0.06252876, z: 0.04748018, w: 0.68585116}
+      scale: {x: 1.0000001, y: 1, z: 1.0000005}
+    - name: leg_2_2.L
+      parentName: leg_2_1.L
+      position: {x: -1.862645e-10, y: 0.0051270826, z: 2.2118911e-10}
+      rotation: {x: 0.31520388, y: -0.033909455, z: -0.081070475, w: 0.9449467}
+      scale: {x: 0.9999994, y: 0.99999994, z: 0.9999999}
+    - name: leg_2_1.R
+      parentName: spine_05
+      position: {x: 0.001084821, y: 0.0020748524, z: -0.00056853826}
+      rotation: {x: -0.6783919, y: -0.06259752, z: -0.04681882, w: 0.73053}
+      scale: {x: 1.0000001, y: 1.0000002, z: 0.99999976}
+    - name: leg_2_2.R
+      parentName: leg_2_1.R
+      position: {x: -5.5879353e-11, y: 0.0051270807, z: -3.1199304e-10}
+      rotation: {x: 0.32434607, y: 0.035756156, z: 0.07549399, w: 0.942243}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999976}
+    - name: spine_01
+      parentName: spine
+      position: {x: 9.942743e-18, y: 5.607834e-11, z: -1.0975213e-10}
+      rotation: {x: -0.000000021948116, y: -0.9761834, z: 0.21694693, w: 0.00000016431851}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999999}
+    - name: spine_02
+      parentName: spine_01
+      position: {x: 8.1046276e-17, y: 0.0026699572, z: -1.3038516e-10}
+      rotation: {x: -0.11730397, y: -0.00000027519994, z: -0.000000011085249, w: 0.99309605}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: spine_03
+      parentName: spine_02
+      position: {x: -5.3845815e-17, y: 0.0035711448, z: -4.842877e-10}
+      rotation: {x: 0.09922759, y: 0.000000019192242, z: -0.000000023192072, w: 0.9950648}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: neck
+      parentName: spine_03
+      position: {x: 2.4424907e-16, y: 0.0021412394, z: 2.2351741e-10}
+      rotation: {x: 0.0207893, y: 0.000000030707408, z: -0.0000000035826166, w: 0.9997839}
+      scale: {x: 1, y: 0.9999998, z: 1}
+    - name: head
+      parentName: neck
+      position: {x: 6.661338e-18, y: 0.0024841116, z: -7.45058e-10}
+      rotation: {x: 0.07738557, y: -0.0000000027444182, z: -0.00000001421396, w: 0.99700123}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mouth
+      parentName: head
+      position: {x: -1.6351483e-11, y: 0.0011496749, z: -0.000038508475}
+      rotation: {x: 0.13891931, y: -0.0000000856614, z: -0.000000027667523, w: 0.99030375}
+      scale: {x: 1, y: 0.99999964, z: 0.99999964}
+    - name: ear.L
+      parentName: head
+      position: {x: -0.0014704716, y: 0.00014161377, z: -0.00067713443}
+      rotation: {x: -0.632201, y: 0.17691621, z: 0.3243063, w: 0.68106383}
+      scale: {x: 0.9999999, y: 0.99999994, z: 0.99999994}
+    - name: ear.R
+      parentName: head
+      position: {x: 0.0014704713, y: 0.00014161378, z: -0.0006771349}
+      rotation: {x: -0.6322009, y: -0.17691611, z: -0.32430625, w: 0.68106407}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: leg_1_1.L
+      parentName: spine_03
+      position: {x: -0.0011245725, y: 0.0003645797, z: 0.000041819214}
+      rotation: {x: 0.38310483, y: -0.18720137, z: 0.62536854, w: 0.6535293}
+      scale: {x: 1.0000002, y: 0.9999999, z: 0.9999999}
+    - name: leg_1_2.L
+      parentName: leg_1_1.L
+      position: {x: 5.9604643e-10, y: 0.005692022, z: -3.1664968e-10}
+      rotation: {x: -0.16781822, y: -0.44455114, z: -0.2796246, w: 0.834279}
+      scale: {x: 0.99999964, y: 1.0000004, z: 1}
+    - name: leg_1_1.R
+      parentName: spine_03
+      position: {x: 0.0011245727, y: 0.00036457926, z: 0.000041820032}
+      rotation: {x: 0.36044955, y: 0.16565949, z: -0.6310753, w: 0.66661614}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+    - name: leg_1_2.R
+      parentName: leg_1_1.R
+      position: {x: -5.7742e-10, y: 0.005692021, z: -5.5879353e-11}
+      rotation: {x: -0.18582872, y: 0.43905434, z: 0.2908134, w: 0.82953393}
+      scale: {x: 0.99999976, y: 1, z: 0.99999964}
+    - name: foot_1_1.R
+      parentName: Base
+      position: {x: 0.0016112006, y: -0.0038220154, z: 0.0007227554}
+      rotation: {x: 0.9846265, y: -0.000000005205691, z: 0.000000029344159, w: -0.17467344}
+      scale: {x: 1, y: 1, z: 1.0000006}
+    - name: foot_1_2.R
+      parentName: foot_1_1.R
+      position: {x: -1.4325666e-10, y: 0.001022938, z: 1.3328787e-10}
+      rotation: {x: -0.047443222, y: 0.0045352783, z: -0.0010449723, w: 0.9988631}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: foot_2_1.R
+      parentName: Base
+      position: {x: 0.001792937, y: 0.0071856272, z: 0.0006682443}
+      rotation: {x: 0.9902038, y: -0.000000011204615, z: 0.00000007945911, w: -0.13962959}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: foot_2_2.R
+      parentName: foot_2_1.R
+      position: {x: 1.3830856e-11, y: 0.0014251865, z: 6.4231676e-11}
+      rotation: {x: -0.11275984, y: -0.000000016807359, z: -0.000000016189517, w: 0.9936223}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Polar_Bear_middle
+      parentName: Polar_bear_mid(Clone)
+      position: {x: -1.7242114e-38, y: 1.0255192e-29, z: 0}
+      rotation: {x: -0.7071068, y: 3.5453377e-31, z: 2.4953877e-24, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -163,13 +1063,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

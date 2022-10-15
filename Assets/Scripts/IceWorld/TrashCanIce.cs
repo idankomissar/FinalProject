@@ -29,14 +29,19 @@ public class TrashCanIce : MonoBehaviour
         if (type.ToString().Equals(trash.type.ToString()))
         {
             ScoreManagerIce.Instance.AddScoreRecycle(1);
-            ScoreManagerIce.Instance.Enlarge(ScoreManagerIce.Instance.icebergs[0]);
+            for (int i = 0; i < ScoreManagerIce.Instance.numOfIceBergs; i++)
+            {
+                ScoreManagerIce.Instance.Enlarge(ScoreManagerIce.Instance.icebergs[i]);
+            }
             isCompatible = true;
             ScoreManagerIce.Instance.AddToEnvironment();
         }
         else
         {
-
-            ScoreManagerIce.Instance.Shrink(ScoreManagerIce.Instance.icebergs[0]);
+            for (int i = 0; i < ScoreManagerIce.Instance.numOfIceBergs; i++)
+            {
+                ScoreManagerIce.Instance.Shrink(ScoreManagerIce.Instance.icebergs[i]);
+            }
             ScoreManagerIce.Instance.DiscardFromEnvironment();
         }
         var pos = trash.transform.position;
