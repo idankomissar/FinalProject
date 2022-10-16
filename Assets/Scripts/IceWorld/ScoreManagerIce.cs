@@ -26,6 +26,7 @@ public class ScoreManagerIce : MonoBehaviour
     #endregion
 
     public GameObject timeBar;
+    public GameObject timeBarBackgroud;
     public int scoreTime = 480;
     public int scoreRecycle;
     public int timerTime = 480;
@@ -38,6 +39,7 @@ public class ScoreManagerIce : MonoBehaviour
     public GameObject secondGroup;
     public GameObject thirdGroup;
     public GameObject olaf;
+    public GameObject bins;
     public bool second = false;
     public bool third = false;
     public GameObject LeftIceField;
@@ -50,7 +52,7 @@ public class ScoreManagerIce : MonoBehaviour
     public int NumOfJunksInSecondGroup;
     public int NumOfJunksInThirdGroup;
     public GameObject[] animals;
-    public List<GameObject> animalsList;
+    //public List<GameObject> animalsList;
     public int chosenAnimalIndex = 0;
     public int numOfIceBergs;
     public int numOfAnimals;
@@ -69,7 +71,9 @@ public class ScoreManagerIce : MonoBehaviour
         thirdGroup.SetActive(false);
 
         animals = GameObject.FindGameObjectsWithTag("Animal");
-        animalsList = animals.OrderBy(x => UnityEngine.Random.value).ToList();
+        System.Random random = new System.Random();
+        animals = animals.OrderBy(x => random.Next()).ToArray();
+        //animalsList = animals.OrderBy(x => UnityEngine.Random.value).ToList();
         numOfAnimals = animals.Length;
         for (int i=0; i< numOfAnimals; i++)
         {
@@ -84,7 +88,6 @@ public class ScoreManagerIce : MonoBehaviour
             icebergs[i] = objects[i].GetComponent<Glacier>();
             icebergs[i].Set(objects[i], i);
         }
-
         olaf.SetActive(false);
         
         SetTime();
@@ -135,15 +138,43 @@ public class ScoreManagerIce : MonoBehaviour
         CurrNumOfJunks--;
     }
 
-    public void Enlarge(Glacier obj)
+    public void AddGlacier(Glacier[] glaciers)
+    {
+        if (scoreRecycle >= 7)
+        {
+            glaciers[0].gameObject.SetActive(true);
+        }
+        else if (scoreRecycle >= 5)
+        {
+            glaciers[1].gameObject.SetActive(true);
+        }
+        else if (scoreRecycle >= 3)
+        {
+            glaciers[2].gameObject.SetActive(true);
+        }
+    }    
+    
+    public void RaiseGlacier(Glacier obj)
     {
         if (obj.glacier.activeSelf)
         {
-            obj.glacier.transform.localScale += new Vector3(5f, 5f, 5f);
+            obj.glacier.transform.position += new Vector3(0f, 0.04f, 0f);
         }
         else
         {
             obj.glacier.SetActive(true);
+        }
+    }
+
+    public void LowerGlacier(Glacier obj)
+    {
+        if ((obj.glacier.transform.position.y - 0.04f) >= obj.initialPosition.y)
+        {
+            obj.glacier.transform.position -= new Vector3(0f, 0.04f, 0f);
+        }
+        else
+        {
+            obj.glacier.SetActive(false);
         }
     }
 
@@ -160,37 +191,31 @@ public class ScoreManagerIce : MonoBehaviour
             RightIceFieldAppear = true;
         }
 
-        else if (CurrNumOfJunks > 0 && CurrNumOfJunks%2 ==0 && chosenAnimalIndex < numOfAnimals)
+        else if (CurrNumOfJunks > 0 && chosenAnimalIndex < numOfAnimals)
         {
-            animalsList[chosenAnimalIndex].SetActive(true);
+            animals[chosenAnimalIndex].SetActive(true);
             chosenAnimalIndex++;
         }
 
     }
 
-    public void DiscardFromEnvironment()
+    public void DiscardAnimalFromEnvironment()
     {
         if (scoreRecycle > 2 && CurrNumOfJunks > 0 && chosenAnimalIndex > 0)
         {
             chosenAnimalIndex--;
-            animalsList[chosenAnimalIndex].SetActive(false);
-        }
-    }
-
-    public void Shrink(Glacier obj)
-    {
-        if ((obj.glacier.transform.localScale.x -5f) >= obj.initialScale.x)
-        {
-            obj.glacier.transform.localScale -= new Vector3(5f, 5f, 5f);
-        }
-        else
-        {
-            obj.glacier.SetActive(false);
+            animals[chosenAnimalIndex].SetActive(false);
         }
     }
 
     public void finishGame()
     {
+        firstGroup.SetActive(false);
+        secondGroup.SetActive(false);
+        thirdGroup.SetActive(false);
+        bins.SetActive(false);
+        Destroy(timeBar);
+        Destroy(timeBarBackgroud);
         Destroy(scoreTimeText);
         gameOverText.text = "Game Over!";
         olaf.SetActive(true);

@@ -26,23 +26,40 @@ public class TrashCanIce : MonoBehaviour
             default:
                 break;
         }
+
         if (type.ToString().Equals(trash.type.ToString()))
         {
             ScoreManagerIce.Instance.AddScoreRecycle(1);
-            for (int i = 0; i < ScoreManagerIce.Instance.numOfIceBergs; i++)
-            {
-                ScoreManagerIce.Instance.Enlarge(ScoreManagerIce.Instance.icebergs[i]);
-            }
             isCompatible = true;
-            ScoreManagerIce.Instance.AddToEnvironment();
+            var score = ScoreManagerIce.Instance.scoreRecycle;
+            if (score <= 2 || score % 2 == 1 || score % 10 == 0)
+            {
+                ScoreManagerIce.Instance.AddToEnvironment();
+  
+            }
+            else
+            {
+                for (int i = 0; i < ScoreManagerIce.Instance.numOfIceBergs; i++)
+                {
+                    ScoreManagerIce.Instance.RaiseGlacier(ScoreManagerIce.Instance.icebergs[i]);
+                }
+            }
         }
+
         else
         {
-            for (int i = 0; i < ScoreManagerIce.Instance.numOfIceBergs; i++)
+            var score = ScoreManagerIce.Instance.scoreRecycle;
+            if (score > 2 && (score % 2 == 1 || score % 10 == 0))
             {
-                ScoreManagerIce.Instance.Shrink(ScoreManagerIce.Instance.icebergs[i]);
+                ScoreManagerIce.Instance.DiscardAnimalFromEnvironment();
             }
-            ScoreManagerIce.Instance.DiscardFromEnvironment();
+            else
+            {
+                for (int i = 0; i < ScoreManagerIce.Instance.numOfIceBergs; i++)
+                {
+                    ScoreManagerIce.Instance.LowerGlacier(ScoreManagerIce.Instance.icebergs[i]);
+                }
+            }
         }
         var pos = trash.transform.position;
         DataManager.Instance.WriteTrashEnteredEvent(ScoreManagerIce.Instance.scoreRecycle, isCompatible, new Vector3(pos.x, pos.y, pos.z));

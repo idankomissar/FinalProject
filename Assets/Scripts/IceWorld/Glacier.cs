@@ -6,16 +6,15 @@ using UnityEngine;
 public class Glacier : MonoBehaviour
 {
     public GameObject glacier;
-    public Vector3 initialScale;
+    public Vector3 initialPosition;
     public int index;
     public void Awake()
     {
-        initialScale = new Vector3(this.transform.localScale.x, this.transform.localScale.y, this.transform.localScale.z);
+        initialPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
     }
     public void Set(GameObject g, int i)
     {
         glacier = g;
-        //initialScale = new Vector3(g.transform.localScale.x, g.transform.localScale.y, g.transform.localScale.z);
         index = i;
     }
 }

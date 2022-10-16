@@ -27,18 +27,20 @@ public class ScoreManager : MonoBehaviour
 
     public GameObject timeBar;
     public GameObject scoreBar;
+    public GameObject timeBarBackgroud;
+    public GameObject scoreBarBackground;
     public int scoreTime = 480;
     public int scoreRecycle;
     public int timerTime = 480;
     public TextMeshPro scoreTimeText;
     public TextMeshPro scoreRecycleText;
     public TextMeshPro gameOverText;
-    public int numberOfJunks;
     private Vector3 a = new Vector3(0, 0.1F, 0);
     private Vector3 b = new Vector3(1, 0.1F, 0);
     public GameObject firstGroup;
     public GameObject secondGroup;
     public GameObject thirdGroup;
+    public GameObject bins;
     public bool second = false;
     public bool third = false;
     public int totalNumOfJunk;
@@ -111,14 +113,22 @@ public class ScoreManager : MonoBehaviour
 
     public void TrashEnteredToBin()
     {
-        numberOfJunks--;
+        CurrNumOfJunks--;
     }
 
 
     public void finishGame()
     {
+        firstGroup.SetActive(false);
+        secondGroup.SetActive(false);
+        thirdGroup.SetActive(false);
+        bins.SetActive(false);
         Destroy(scoreRecycleText);
         Destroy(scoreTimeText);
+        Destroy(timeBar);
+        Destroy(scoreBar);
+        Destroy(timeBarBackgroud);
+        Destroy(scoreBarBackground);
         gameOverText.text = "Game Over! Your score is: " + scoreRecycle.ToString();
     }
 }
