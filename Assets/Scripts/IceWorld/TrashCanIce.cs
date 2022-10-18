@@ -34,7 +34,7 @@ public class TrashCanIce : MonoBehaviour
             var score = ScoreManagerIce.Instance.scoreRecycle;
             if (score <= 2 || score % 2 == 1 || score % 10 == 0)
             {
-                ScoreManagerIce.Instance.AddToEnvironment();
+                ScoreManagerIce.Instance.AddAnimal();
   
             }
             else
@@ -49,15 +49,32 @@ public class TrashCanIce : MonoBehaviour
         else
         {
             var score = ScoreManagerIce.Instance.scoreRecycle;
-            if (score > 2 && (score % 2 == 1 || score % 10 == 0))
+            if (score > 2)
             {
-                ScoreManagerIce.Instance.DiscardAnimalFromEnvironment();
-            }
-            else
-            {
-                for (int i = 0; i < ScoreManagerIce.Instance.numOfIceBergs; i++)
+                if (score % 2 == 1 || score % 10 == 0)
                 {
-                    ScoreManagerIce.Instance.LowerGlacier(ScoreManagerIce.Instance.icebergs[i]);
+                    if (!ScoreManagerIce.Instance.DiscardAnimal())
+                    {
+                        for (int i = 0; i < ScoreManagerIce.Instance.numOfIceBergs; i++)
+                        {
+                            ScoreManagerIce.Instance.LowerGlacier(ScoreManagerIce.Instance.icebergs[i]);
+                        }
+                    }
+                }
+                else
+                {
+                    bool noIcebergAppearToLower = true;
+                    for (int i = 0; i < ScoreManagerIce.Instance.numOfIceBergs; i++)
+                    {
+                        if (ScoreManagerIce.Instance.LowerGlacier(ScoreManagerIce.Instance.icebergs[i]))
+                        {
+                            noIcebergAppearToLower = false;
+                        }
+                    }
+                    if (noIcebergAppearToLower)
+                    {
+                        ScoreManagerIce.Instance.DiscardAnimal();
+                    }
                 }
             }
         }

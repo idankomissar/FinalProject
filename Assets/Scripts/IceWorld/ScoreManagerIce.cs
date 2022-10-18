@@ -53,14 +53,11 @@ public class ScoreManagerIce : MonoBehaviour
     public int NumOfJunksInThirdGroup;
     public GameObject[] animals;
     //public List<GameObject> animalsList;
-    public int chosenAnimalIndex = 0;
+    public int chosenAnimalIndex = -1;
     public int numOfIceBergs;
-    public int numOfAnimals;
-
-
 
     private void Start()
-    {   
+    {
         totalNumOfJunk = GameObject.FindGameObjectsWithTag("Junk").Length;
         CurrNumOfJunks = totalNumOfJunk;
         NumOfJunksInFirstGroup = firstGroup.transform.childCount;
@@ -73,23 +70,22 @@ public class ScoreManagerIce : MonoBehaviour
         animals = GameObject.FindGameObjectsWithTag("Animal");
         System.Random random = new System.Random();
         animals = animals.OrderBy(x => random.Next()).ToArray();
-        //animalsList = animals.OrderBy(x => UnityEngine.Random.value).ToList();
-        numOfAnimals = animals.Length;
-        for (int i=0; i< numOfAnimals; i++)
+        for (int i = 0; i < animals.Length; i++)
         {
             animals[i].SetActive(false);
         }
-        
+
         numOfIceBergs = GameObject.FindGameObjectsWithTag("iceberg").Length;
         var objects = GameObject.FindGameObjectsWithTag("iceberg");
         icebergs = new Glacier[numOfIceBergs];
-        for (int i=0; i < numOfIceBergs; i++)
+        for (int i = 0; i < numOfIceBergs; i++)
         {
             icebergs[i] = objects[i].GetComponent<Glacier>();
             icebergs[i].Set(objects[i], i);
+            objects[i].SetActive(false);
         }
         olaf.SetActive(false);
-        
+
         SetTime();
     }
 
@@ -102,7 +98,7 @@ public class ScoreManagerIce : MonoBehaviour
         }
         else
         {
-            finishGame();
+            FinishGame();
         }
 
         if ((totalNumOfJunk - NumOfJunksInFirstGroup) >= CurrNumOfJunks && !second)
@@ -138,47 +134,47 @@ public class ScoreManagerIce : MonoBehaviour
         CurrNumOfJunks--;
     }
 
-    public void AddGlacier(Glacier[] glaciers)
-    {
-        if (scoreRecycle >= 7)
-        {
-            glaciers[0].gameObject.SetActive(true);
-        }
-        else if (scoreRecycle >= 5)
-        {
-            glaciers[1].gameObject.SetActive(true);
-        }
-        else if (scoreRecycle >= 3)
-        {
-            glaciers[2].gameObject.SetActive(true);
-        }
-    }    
-    
     public void RaiseGlacier(Glacier obj)
     {
+        Debug.Log("entered RaiseGlacier: Glacier " + obj.glacier.name);
         if (obj.glacier.activeSelf)
         {
+            //Debug.Log("curr y position = " + obj.glacier.transform.position.y + " intitial pos = " + obj.initialPosition.y);
+            //Debug.Log("curr x scale = " + obj.glacier.transform.localScale.x + " intitial scale = " + obj.initialScale.x);
             obj.glacier.transform.position += new Vector3(0f, 0.04f, 0f);
+            obj.glacier.transform.localScale += new Vector3(0.008f, 0f, 0.008f);
         }
         else
         {
+            //Debug.Log("setActive = true for " + obj.glacier.name);
             obj.glacier.SetActive(true);
         }
     }
 
-    public void LowerGlacier(Glacier obj)
+    public bool LowerGlacier(Glacier obj)
     {
-        if ((obj.glacier.transform.position.y - 0.04f) >= obj.initialPosition.y)
+        Debug.Log("entered lowerGlacier: Glacier "+obj.glacier.name);
+        if (obj.glacier.activeSelf)
         {
-            obj.glacier.transform.position -= new Vector3(0f, 0.04f, 0f);
+            //Debug.Log("curr y position = " + obj.glacier.transform.position.y+ " intitial pos = " + obj.initialPosition.y);
+            //Debug.Log("curr x scale = " + obj.glacier.transform.localScale.x + " intitial scale = " + obj.initialScale.x);
+            if ((obj.glacier.transform.localScale.x - 0.008f) >= obj.initialScale.x)
+            {
+                obj.glacier.transform.position -= new Vector3(0f, 0.04f, 0f);
+                obj.glacier.transform.localScale -= new Vector3(0.008f, 0.008f, 0.008f);
+            }
+            else
+            {
+                //Debug.Log("setActive = false for " + obj.glacier.name);
+                obj.glacier.SetActive(false);
+            }
+            return true;
         }
-        else
-        {
-            obj.glacier.SetActive(false);
-        }
+        return false;
+
     }
 
-    public void AddToEnvironment()
+    public void AddAnimal()
     {
         if (scoreRecycle >= 1 && !LeftIceFieldAppear)
         {
@@ -190,25 +186,30 @@ public class ScoreManagerIce : MonoBehaviour
             RightIceField.SetActive(true);
             RightIceFieldAppear = true;
         }
-
-        else if (CurrNumOfJunks > 0 && chosenAnimalIndex < numOfAnimals)
+        else if (chosenAnimalIndex < animals.Length)
         {
-            animals[chosenAnimalIndex].SetActive(true);
+            if (chosenAnimalIndex < 0)
+            {
+                chosenAnimalIndex = -1;
+            }
             chosenAnimalIndex++;
+            animals[chosenAnimalIndex].SetActive(true);
         }
 
     }
 
-    public void DiscardAnimalFromEnvironment()
+    public bool DiscardAnimal()
     {
-        if (scoreRecycle > 2 && CurrNumOfJunks > 0 && chosenAnimalIndex > 0)
+        if (chosenAnimalIndex >= 0)
         {
-            chosenAnimalIndex--;
             animals[chosenAnimalIndex].SetActive(false);
+            chosenAnimalIndex -= 1;
+            return true;
         }
+        return false;
     }
 
-    public void finishGame()
+    public void FinishGame()
     {
         firstGroup.SetActive(false);
         secondGroup.SetActive(false);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2456076, g: 0.34669805, b: 0.47030747, a: 1}
+  m_IndirectSpecularColor: {r: 0.245478, g: 0.34648576, b: 0.4699278, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -245,6 +245,10 @@ PrefabInstance:
       value: iceberg1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 07a180a8431754540ae2795db0a0640e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 07a180a8431754540ae2795db0a0640e, type: 3}
       propertyPath: m_TagString
       value: iceberg
       objectReference: {fileID: 0}
@@ -384,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 107efe2a325512844bc9191ff6391c6a, type: 3}
       propertyPath: m_Name
-      value: Wine_bottle_model_ver2010
+      value: WineBottle2.1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 107efe2a325512844bc9191ff6391c6a, type: 3}
       propertyPath: m_TagString
@@ -692,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41dc84019e9376b46908ba7afdd1d15e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4785653
+      value: -1.03
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41dc84019e9376b46908ba7afdd1d15e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2286,7 +2290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glacier: {fileID: 0}
-  initialPosition: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   index: 0
 --- !u!1 &407262140 stripped
 GameObject:
@@ -2306,7 +2310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glacier: {fileID: 0}
-  initialPosition: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   index: 0
 --- !u!1001 &426520687
 PrefabInstance:
@@ -2507,6 +2511,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 439f9386a32d7e447a6bfa0bc001865c, type: 3}
       propertyPath: m_Name
       value: iceberg3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 439f9386a32d7e447a6bfa0bc001865c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 439f9386a32d7e447a6bfa0bc001865c, type: 3}
       propertyPath: m_TagString
@@ -3675,7 +3683,6 @@ MonoBehaviour:
   animals: []
   chosenAnimalIndex: 0
   numOfIceBergs: 0
-  numOfAnimals: 0
 --- !u!4 &845906865
 Transform:
   m_ObjectHideFlags: 0
@@ -3877,6 +3884,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dc976cf07c2c5234d940bad62125d678, type: 3}
       propertyPath: m_Name
       value: iceberg2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dc976cf07c2c5234d940bad62125d678, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc976cf07c2c5234d940bad62125d678, type: 3}
       propertyPath: m_TagString
@@ -5368,6 +5379,12 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: PickUp
+    clip: {fileID: 8300000, guid: 4279e608b994640a9a381397e3fe2d4d, type: 3}
+    volume: 0.68
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &1485008348
 Transform:
   m_ObjectHideFlags: 0
@@ -5829,7 +5846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glacier: {fileID: 0}
-  initialPosition: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   index: 0
 --- !u!1001 &1604911512
 PrefabInstance:
@@ -6912,7 +6929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 158f64c095c0f485fabbb352ec66a8c5, type: 3}
       propertyPath: m_Name
-      value: WineBottle2
+      value: WineBottle1.1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 158f64c095c0f485fabbb352ec66a8c5, type: 3}
       propertyPath: m_TagString
@@ -7517,7 +7534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 158f64c095c0f485fabbb352ec66a8c5, type: 3}
       propertyPath: m_Name
-      value: WineBottle
+      value: WineBottle1.2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 158f64c095c0f485fabbb352ec66a8c5, type: 3}
       propertyPath: m_TagString
@@ -8770,7 +8787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 107efe2a325512844bc9191ff6391c6a, type: 3}
       propertyPath: m_Name
-      value: Wine_bottle_model_ver2010 (1)
+      value: WineBottle2.2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 107efe2a325512844bc9191ff6391c6a, type: 3}
       propertyPath: m_TagString

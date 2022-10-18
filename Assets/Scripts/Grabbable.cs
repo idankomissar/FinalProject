@@ -28,6 +28,7 @@ public class Grabbable : MonoBehaviour
         }
         else if (other.tag.Equals("PlayerHand"))
         {
+            AudioManager.Instance.Play("PickUp");
             transform.SetParent(other.transform);
         }
     }

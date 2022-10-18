@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.28502658, g: 0.37139305, b: 0.49600944, a: 1}
+  m_IndirectSpecularColor: {r: 0.2850265, g: 0.3713928, b: 0.49600852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4356,6 +4356,12 @@ MonoBehaviour:
     loop: 0
   - name: PaperDrop
     clip: {fileID: 8300000, guid: 671cf6243b13d48869933d2d2b0cb21a, type: 3}
+    volume: 0.68
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: PickUp
+    clip: {fileID: 8300000, guid: 4279e608b994640a9a381397e3fe2d4d, type: 3}
     volume: 0.68
     pitch: 1
     source: {fileID: 0}
