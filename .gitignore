@@ -61,6 +61,7 @@ sysinfo.txt
 Assets/.DS_Store
 Assets\\Data\\DiscreteTest_Liron.txt
 Assets\\Data\\ContinuousTest_Liron.txt
+Assets\Data\
 # Crashlytics generated file
 crashlytics-build.properties
 UpgradeLog.htm

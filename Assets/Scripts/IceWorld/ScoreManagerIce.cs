@@ -136,13 +136,13 @@ public class ScoreManagerIce : MonoBehaviour
 
     public void RaiseGlacier(Glacier obj)
     {
-        Debug.Log("entered RaiseGlacier: Glacier " + obj.glacier.name);
+        //Debug.Log("entered RaiseGlacier: Glacier " + obj.glacier.name);
         if (obj.glacier.activeSelf)
         {
             //Debug.Log("curr y position = " + obj.glacier.transform.position.y + " intitial pos = " + obj.initialPosition.y);
             //Debug.Log("curr x scale = " + obj.glacier.transform.localScale.x + " intitial scale = " + obj.initialScale.x);
             obj.glacier.transform.position += new Vector3(0f, 0.04f, 0f);
-            obj.glacier.transform.localScale += new Vector3(0.008f, 0f, 0.008f);
+            obj.glacier.transform.localScale += new Vector3(0.008f, 0.008f, 0.008f);
         }
         else
         {
@@ -153,7 +153,7 @@ public class ScoreManagerIce : MonoBehaviour
 
     public bool LowerGlacier(Glacier obj)
     {
-        Debug.Log("entered lowerGlacier: Glacier "+obj.glacier.name);
+        //Debug.Log("entered lowerGlacier: Glacier "+obj.glacier.name);
         if (obj.glacier.activeSelf)
         {
             //Debug.Log("curr y position = " + obj.glacier.transform.position.y+ " intitial pos = " + obj.initialPosition.y);
